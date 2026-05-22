@@ -12,7 +12,7 @@
 
     <header>
         <h1>林升远</h1>
-        <p class="subtitle">金融科技本科 ｜ 求职意向：市场专员</p>
+        <p class="subtitle">金融科技本科 ｜ 求职意向：</p>
     </header>
 
     <section>
@@ -34,18 +34,18 @@
         <div class="card">
             <h3>广州华商学院</h3>
             <p>金融科技（本科）｜ 2023 - 至今</p>
-            <p>GPA 3.0+ ｜ 专业排名前 15%</p>
+            <p>每学期绩点 3.0+ ｜ 专业排名前 15%</p>
         </div>
     </section>
 
     <section>
         <h2>专业技能</h2>
         <ul>
-            <li>CET-6，具备较强英文阅读、理解与口语沟通能力</li>
-            <li>熟练使用 Office 等办公软件（计算机一级）</li>
-            <li>掌握数据清洗、特征筛选、用户画像构建</li>
-            <li>擅长数据可视化与研究报告撰写</li>
-            <li>熟练运用 AI 工具提升工作效率</li>
+            <li>CET-6，具备较强英文阅读能力和理解能力，具备较强英文口语沟通能力</li>
+            <li>计算机一级，熟悉计算机各项操作，精通 Office 等办公软件</li>
+            <li>具备数据分析、大规模数据清洗、特征筛选能力</li>
+            <li>擅长搭建数据看板、构建用户画像</li>
+            <li>熟练运用 AI 工具提升工作效率与信息处理能力</li>
         </ul>
     </section>
 
@@ -56,10 +56,9 @@
             <h3>金融学院学生会主席</h3>
             <span>2025.02 - 2025.06</span>
             <ul>
-                <li>统筹协调学生会多部门联动</li>
-                <li>独立策划并落地 10+ 项校园活动</li>
-                <li>组织院级运动会，协助校级运动会</li>
-                <li>参与香港金融研学，拓宽行业视野</li>
+                <li>统筹协调学生会多部门联动，独立策划并落地 10+ 项学生活动</li>
+                <li>组织院级运动会 1 场，协助校级运动会 1 场</li>
+                <li>参与香港金融研学，调研区域金融运行模式，拓宽行业视野</li>
                 <li>获校级优秀生二等奖、优秀班干</li>
             </ul>
         </div>
@@ -68,10 +67,10 @@
             <h3>校团委组织部组员</h3>
             <span>2024.09 - 2025.01</span>
             <ul>
-                <li>协助开展学院月度团务工作</li>
+                <li>协助开展金融学院月度团务工作</li>
                 <li>完成团生活动 20+ 次</li>
                 <li>整理团员资料 5+ 次</li>
-                <li>独立策划 5 场团生活动</li>
+                <li>独立策划 5 场团生活动，落实思想引领与团务规范化建设</li>
             </ul>
         </div>
     </section>
@@ -79,315 +78,29 @@
     <section>
         <h2>项目经历</h2>
         <div class="card">
-            <h3>智慧银行数字化实训运营</h3>
+            <h3>智慧银行数字化实训运营（参与协调决策）</h3>
             <span>2026.02 - 至今</span>
             <ul>
                 <li>参与银行数字化运营实战</li>
                 <li>协同团队优化运营策略</li>
-                <li>提升商业银行业务理解与运营能力</li>
-                <li>团队获全校积分赛第三名</li>
+                <li>提高商业银行业务熟知水平和业务运营能力</li>
+                <li>团队斩获全校积分赛第三名</li>
             </ul>
         </div>
     </section>
 
     <section>
-        <h2>个人优势</h2>
+        <h2>个人介绍</h2>
         <p>
-            具备优秀数字化办公能力与双语信息整合能力，
-            自学能力强，可独立检索和研读海外英文资料。
-            擅长将复杂数据分析结果转化为高可读性研究报告与可视化展示，
-            结果导向明确，执行力强。
+            每学期绩点 3.0 以上，排名全级前 15%。具备优秀的数字化办公素养与双语信息整合能力。
+            自学能力强，能检索、研读海外英文文献。具备数据分析、大规模数据清洗、特征筛选能力。
+            擅长搭建数据看板、构建用户画像。擅用 AI 赋能日常工作流，将复杂的数据分析结果转化为
+            高可读性研究报告与可视化 PPT。性格稳定，结果导向意识强，当前学业课时充裕，
+            可保障远程实习稳定交付。
         </p>
     </section>
 
 </div>
 
-</body>
-</html>                const targetCol = this.cols[i];
-                if (targetCol.length > 0) {
-                    const targetTopCard = targetCol[targetCol.length - 1];
-                    if (this.getCardColor(targetTopCard.suit) !== this.getCardColor(card.suit) && targetTopCard.rank === card.rank + 1) {
-                        this.pushHistory();
-                        targetCol.push(card); 
-                        if (type === 'col') this.cols[srcCIdx].pop();
-                        else this.fcs[srcCIdx] = null; 
-                        this.render(); this.postMoveCheck();
-                        return;
-                    }
-                }
-            }
-
-            if (type === 'col') {
-                const limit = this.getFreeCellLimit();
-                for(let i = 0; i < limit; i++) {
-                    if (this.fcs[i] === null) {
-                        this.pushHistory();
-                        this.fcs[i] = this.cols[srcCIdx].pop();
-                        this.render(); this.postMoveCheck();
-                        return;
-                    }
-                }
-            }
-        }
-
-        canPushToFoundation(card) {
-            for (let f of this.fnds) {
-                if (f.length === 0 && card.rank === 1) return true;
-                if (f.length > 0 && f[0].suit === card.suit && f[f.length - 1].rank === card.rank - 1) return true;
-            }
-            return false;
-        }
-
-        moveToFoundation(card) {
-            for (let f of this.fnds) {
-                if (f.length === 0 && card.rank === 1) { f.push(card); return; }
-                if (f.length > 0 && f[0].suit === card.suit && f[f.length - 1].rank === card.rank - 1) { f.push(card); return; }
-            }
-        }
-
-        getMovingChain(type, cIdx, rIdx) {
-            if(type === 'fc') return this.fcs[cIdx] ? [this.fcs[cIdx]] : [];
-            if(type === 'col') {
-                const col = this.cols[cIdx];
-                let chain = col.slice(rIdx);
-                for(let i = 0; i < chain.length - 1; i++) {
-                    if(this.getCardColor(chain[i].suit) === this.getCardColor(chain[i+1].suit) || chain[i].rank !== chain[i+1].rank + 1) {
-                        return null; 
-                    }
-                }
-                return chain;
-            }
-            return null;
-        }
-
-        getEmptyFcCount() {
-            return this.fcs.slice(0, this.getFreeCellLimit()).filter(v => v === null).length;
-        }
-
-        getEmptyColCount() {
-            return this.cols.filter(c => c.length === 0).length;
-        }
-
-        handleDrop(e) {
-            const data = e.dataTransfer.getData('text');
-            if(!data) return;
-
-            const [srcType, srcC, srcR] = data.split('-');
-            const srcCIdx = parseInt(srcC);
-            const srcRIdx = parseInt(srcR);
-
-            let targetSlot = e.target.closest('.card');
-            if (targetSlot && targetSlot.classList.contains('locked')) return;
-
-            let destColIdx = -1;
-            let isTargetEmptyCol = false;
-
-            if (targetSlot) {
-                const [tType, tC] = targetSlot.dataset.loc.split('-');
-                if (tType === 'col') destColIdx = parseInt(tC);
-            } else {
-                targetSlot = e.target.closest('.cascade-col');
-                if (targetSlot) {
-                    destColIdx = parseInt(targetSlot.dataset.idx);
-                    if (this.cols[destColIdx].length === 0) isTargetEmptyCol = true;
-                }
-            }
-
-            if (!targetSlot && destColIdx === -1) {
-                targetSlot = e.target.closest('.slot');
-                if (!targetSlot) return;
-            }
-
-            let movingCards = this.getMovingChain(srcType, srcCIdx, srcRIdx);
-            if(!movingCards || !movingCards.length) return;
-
-            let maxMovable = this.getEmptyFcCount() + 1 + (isTargetEmptyCol ? Math.max(0, this.getEmptyColCount() - 1) : this.getEmptyColCount());
-
-            if(targetSlot && targetSlot.classList.contains('fc')) {
-                const destIdx = parseInt(targetSlot.dataset.idx);
-                if(destIdx < this.getFreeCellLimit() && !this.fcs[destIdx] && movingCards.length === 1) {
-                    this.pushHistory();
-                    this.fcs[destIdx] = movingCards[0];
-                    if(srcType === 'fc') this.fcs[srcCIdx] = null;
-                    else this.cols[srcCIdx].pop();
-                    this.render(); this.postMoveCheck();
-                }
-            } 
-            else if(targetSlot && targetSlot.classList.contains('fnd')) {
-                const destIdx = parseInt(targetSlot.dataset.idx);
-                if(movingCards.length === 1) {
-                    const c = movingCards[0];
-                    const f = this.fnds[destIdx];
-                    if((f.length === 0 && c.rank === 1) || (f.length > 0 && f[0].suit === c.suit && f[f.length-1].rank === c.rank - 1)) {
-                        this.pushHistory();
-                        f.push(c);
-                        if(srcType === 'fc') this.fcs[srcCIdx] = null;
-                        else this.cols[srcCIdx].pop();
-                        this.render(); this.postMoveCheck();
-                    }
-                }
-            } 
-            else if(destColIdx !== -1 && destColIdx !== srcCIdx) {
-                const col = this.cols[destColIdx];
-                if(movingCards.length > maxMovable) return;
-
-                if(col.length === 0) {
-                    this.pushHistory();
-                    this.cols[destColIdx] = movingCards;
-                    if(srcType === 'fc') this.fcs[srcCIdx] = null;
-                    else this.cols[srcCIdx].splice(srcRIdx);
-                    this.render(); this.postMoveCheck();
-                } 
-                else {
-                    const top = col[col.length-1];
-                    if(this.getCardColor(top.suit) !== this.getCardColor(movingCards[0].suit) && top.rank === movingCards[0].rank + 1) {
-                        this.pushHistory();
-                        this.cols[destColIdx] = col.concat(movingCards);
-                        if(srcType === 'fc') this.fcs[srcCIdx] = null;
-                        else this.cols[srcCIdx].splice(srcRIdx);
-                        this.render(); this.postMoveCheck();
-                    }
-                }
-            }
-        }
-
-        postMoveCheck() {
-            let autoMoved = false;
-            do {
-                autoMoved = false;
-                for(let i=0; i<8; i++) {
-                    const col = this.cols[i];
-                    if(col.length > 0) {
-                        const card = col[col.length-1];
-                        if(this.isSafeToAutoFoundation(card) && this.canPushToFoundation(card)) {
-                            this.pushHistory(); col.pop(); this.moveToFoundation(card);
-                            autoMoved = true; break;
-                        }
-                    }
-                }
-                if(autoMoved) continue;
-                for(let i=0; i<4; i++) {
-                    const card = this.fcs[i];
-                    if(card && this.isSafeToAutoFoundation(card) && this.canPushToFoundation(card)) {
-                        this.pushHistory(); this.fcs[i] = null; this.moveToFoundation(card);
-                        autoMoved = true; break;
-                    }
-                }
-            } while(autoMoved);
-            this.render();
-            this.checkWinState();
-        }
-
-        isSafeToAutoFoundation(card) {
-            if(card.rank <= 2) return true; 
-            const oppositeColor = this.getCardColor(card.suit) === 'red' ? 'black' : 'red';
-            let fndMinRank = 13;
-            for(let f of this.fnds) {
-                if(f.length === 0) { fndMinRank = 0; break; }
-                if(this.getCardColor(f[0].suit) === oppositeColor) {
-                    fndMinRank = Math.min(fndMinRank, f[f.length-1].rank);
-                }
-            }
-            return card.rank <= fndMinRank + 1;
-        }
-
-        checkWinState() {
-            if(this.fnds.every(f => f.length === 13)) {
-                clearInterval(this.timerInterval);
-                let lvlName = this.domDifficulty.value === "4" ? "学徒" : (this.domDifficulty.value === "3" ? "大师" : "宗师");
-                this.domStatus.innerText = `解开！级别【${lvlName}】 用时 ${this.domTimer.innerText}`;
-            }
-        }
-
-        render() {
-            const limit = this.getFreeCellLimit();
-            const slots = this.domFc.querySelectorAll('.slot.fc');
-            
-            slots.forEach((s, idx) => { 
-                s.innerHTML = ""; 
-                if(idx >= limit) s.classList.add('disabled-slot');
-                else s.classList.remove('disabled-slot');
-            });
-            
-            this.domFnd.querySelectorAll('.slot.fnd').forEach(s => s.innerHTML = "");
-            const colDivs = this.domCascade.querySelectorAll('.cascade-col');
-            colDivs.forEach(c => c.innerHTML = "");
-
-            for (let i = 0; i < 4; i++) {
-                if (this.fcs[i]) slots[i].appendChild(this.createCardDOM(this.fcs[i], `fc-${i}-0`, false));
-            }
-
-            for (let i = 0; i < 4; i++) {
-                const f = this.fnds[i];
-                if (f.length > 0) {
-                    this.domFnd.querySelectorAll('.slot.fnd')[i].appendChild(this.createCardDOM(f[f.length - 1], `fnd-${i}-${f.length-1}`, true));
-                }
-            }
-
-            // 完美的 30px 卡片间距层叠，绝对没有多余文本流撑大高度
-            for (let i = 0; i < 8; i++) {
-                const col = this.cols[i];
-                col.forEach((card, rIdx) => {
-                    const cardEl = this.createCardDOM(card, `col-${i}-${rIdx}`, false);
-                    cardEl.style.top = `${rIdx * 30}px`;
-                    
-                    if(rIdx < col.length - 1) {
-                        let subChainMovable = true;
-                        let subChain = col.slice(rIdx);
-                        for(let k=0; k<subChain.length-1; k++) {
-                            if(this.getCardColor(subChain[k].suit) === this.getCardColor(subChain[k+1].suit) || subChain[k].rank !== subChain[k+1].rank + 1) {
-                                subChainMovable = false; break;
-                            }
-                        }
-                        if(!subChainMovable) {
-                            cardEl.removeAttribute('draggable');
-                            cardEl.style.cursor = 'default';
-                        }
-                    }
-                    colDivs[i].appendChild(cardEl);
-                });
-            }
-        }
-
-        getSuitHTML(suit) {
-            const s = suit.toLowerCase();
-            if (s === 'd') return `<div class="suit-vector"><div class="suit-d suit-v-path"></div></div>`;
-            if (s === 'h') return `<div class="suit-vector"><div class="suit-h suit-v-path"></div></div>`;
-            if (s === 's') return `<div class="suit-vector"><div class="suit-s suit-v-path"><div class="suit-stem"></div></div></div>`;
-            if (s === 'c') return `<div class="suit-vector"><div class="suit-c suit-v-path"><div class="circle c-top"></div><div class="circle c-left"></div><div class="circle c-right"></div><div class="suit-stem"></div></div></div>`;
-            return '';
-        }
-
-        createCardDOM(card, locStr, isLocked = false) {
-            const cardEl = document.createElement('div');
-            const isRed = this.getCardColor(card.suit) === 'red';
-            cardEl.className = `card ${isRed ? 'red' : 'black'} ${isLocked ? 'locked' : ''}`;
-            cardEl.dataset.loc = locStr;
-            
-            if (!isLocked) cardEl.setAttribute('draggable', 'true');
-
-            const valStr = this.getCardValueDisplay(card.rank);
-            const suitHTML = this.getSuitHTML(card.suit);
-
-            cardEl.innerHTML = `
-                <div class="card-corner">
-                    <span class="card-value">${valStr}</span>
-                    ${suitHTML}
-                </div>
-                <div class="card-center-suit">${suitHTML}</div>
-            `;
-
-            if (!isLocked) {
-                cardEl.addEventListener('dragstart', (e) => e.dataTransfer.setData('text/plain', e.target.dataset.loc));
-                cardEl.addEventListener('dblclick', (e) => this.handleDblClick(e));
-            }
-            return cardEl;
-        }
-    }
-
-    window.addEventListener('DOMContentLoaded', () => {
-        window.gameInstance = new FreeCell();
-    });
-    </script>
 </body>
 </html>
